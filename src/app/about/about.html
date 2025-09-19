@@ -1,6 +1,39 @@
-<p>about works!</p>
-@for(item of usersData; track item.id ){
-<form action="">
-    <p>{{item.firstName}}</p>
-</form> 
-}
+<div class="m-5">
+    <form class=" md:flex items-center lg:w-full border-4 border-[#E7EAEE] rounded-lg p-1">
+        <!-- Input -->
+        <input type="email" placeholder="Enter Name..."
+            class="flex-1 h-12 px-4 text-sm outline-none rounded-lg bg-white" />
+        <!-- Button -->
+        <button type="submit" class="h-12 px-6 bg-blue-600 text-white font-medium text-sm md:rounded-lg"
+            (click)="onButtonCLick()">
+            Search by Name
+        </button>
+    </form>
+</div>
+
+<div class="container flex items-center justify-center mt-10">
+    <form action="" id="userForm">
+        <table class="border-collapse table-fixed border border-gray-400 dark:border-gray-500">
+            <thead>
+                <tr>
+                    @for (item of getaboutData.th; track item) {
+                    <th class="border p-3 border-gray-300 dark:border-gray-600">{{item}}</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border p-3 border-gray-300 dark:border-gray-600" *ngFor="let item of usersData">
+                    <td class="border p-3 border-gray-300 dark:border-gray-600 text-center">{{item.id}}</td>
+                    <td class="border p-3 border-gray-300 dark:border-gray-600 text-center">{{item.firstName +" "+
+                        item.lastName}}</td>
+                    <td class="border p-3 border-gray-300 dark:border-gray-600 text-center">{{item.age}}</td>
+                    <td class="border p-3 border-gray-300 dark:border-gray-600 text-center">{{item.gender}}</td>
+                    <td class="border p-3 border-gray-300 dark:border-gray-600 text-center">{{item.email}}</td>
+                    <td class="border p-3 border-gray-300 dark:border-gray-600 text-center">{{item.phone}}</td>
+                    <td class="border p-3 border-gray-300 dark:border-gray-600 text-center"><img [src]="item.image"
+                            alt="image" width="50" height="50"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

@@ -13,7 +13,7 @@ interface ApiResponse {
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [],                                                                                                                
   templateUrl: './about.html',
   styleUrls: ['./about.css'],
 })

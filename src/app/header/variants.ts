@@ -76,7 +76,7 @@ export const HeaderData: data = {
     {
       title: 'Car Covers',
       sub: [
-        'Sedan',
+        'Sedan',                                                                                                                  
         'SUV',
         'Truck',
         'Chair Covers',
